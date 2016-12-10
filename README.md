@@ -13,11 +13,11 @@ I don't know
 ## ChangeLog
 
 ### 1.0
-
+ - Based on CB 1.8.8
 ### 1.1
- - 1.5.2 Supoort (1.5.2 only jar file)
+ - Added 1.5.2 Supoort (1.5.2 only jar file)
  - When join the server, scoreboard in the config will automatically executed
  
 ## 1.2
- - 1.5.2 Support (Combined)
+ - Added 1.5.2 Support (Combine)
  - Optimization (No longer 1 Thread = 1 Player)
