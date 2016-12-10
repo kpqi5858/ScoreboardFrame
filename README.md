@@ -7,32 +7,7 @@ Awesome scoreboard plugin for Minecraft 1.5.2 or later
  - Using PlaceholderAPI to get Player's a lot of information.
  
 ## How to Edit
-
-20
-Title
-This is message
-Money : %vaulteco_balance%
-%vaulteco_balance% is from PlaceHolderAPI.
-Will show player's balance
-
-&aColor is supported
-;
-Title
-This is Second Frame
-After 20 ticks(= 1sec)
-This Scoreboard will shown
-;
-Title
-";" Means "End of this frame"
-
-
-First Line : Delay for each frames
-Second Line : Title for first frame
-....
-Line that end of frame : ";" for divide each frames
-Line that end of frame + 1 : That frame's Title
-....
-
+I don't know
 
 
 ## ChangeLog
