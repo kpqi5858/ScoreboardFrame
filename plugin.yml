@@ -1,0 +1,13 @@
+name: ScoreboardFrame
+main: kpqi.sf.MainSF
+version: 1.2
+author: Kpqi5858
+description: Awesome Scoreboard plugin with PlaceHolderAPI. Made by 0verFlow(Kpqi5858)
+softdepend: [PlaceholderAPI]
+commands:
+  runsf:
+    description: Run scoreboard.
+  clearsf:
+    description: Clear scoreboard.
+  scoreboardframe:
+    description: About this plugin
