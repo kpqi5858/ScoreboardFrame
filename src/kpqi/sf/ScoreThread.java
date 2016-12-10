@@ -72,23 +72,23 @@ public class ScoreThread implements Runnable {
 			
 			int score = 1;
 			
-			t.setDisplayName(convert.get(0).replace('&', '¡×'));
+			t.setDisplayName(convert.get(0).replace('&', 'ã€'));
 			
 			convert.remove(0);
 			
-			//¾ÈµÚÁıÀ¸¸é µÚÁı¾î¼­ ³ª¿È
+			//ì•ˆë’¤ì§‘ìœ¼ë©´ ë’¤ì§‘ì–´ì„œë‚˜ì˜´ 			
 			Collections.reverse(convert);
 			
 			//1.5.2 Support
 			if (MainSF.is152Version()) {
 				for (String to : convert) {
-					String to1 = to.replace('&', '¡×');
+					String to1 = to.replace('&', 'ã€');
 					t.getScore(new FakePlayer(to1)).setScore(score);
 					score++;
 				}
 			} else {
 				for (String to : convert) {
-					String to1 = to.replace('&', '¡×');
+					String to1 = to.replace('&', 'ã€');
 					t.getScore(to1).setScore(score);
 					score++;
 				}
