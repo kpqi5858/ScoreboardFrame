@@ -1,5 +1,5 @@
 1
-��ǥ
+ÁÂÇ¥
 x : %player_x%
 y : %player_y%
 z : %player_z%
