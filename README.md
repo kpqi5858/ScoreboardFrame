@@ -15,7 +15,7 @@ I don't know
 ### 1.0
 
 ### 1.1
- - 1.5.2 Supoort (Divide for 1.5.2)
+ - 1.5.2 Supoort (1.5.2 only jar file)
  - When join the server, scoreboard in the config will automatically executed
  
 ## 1.2
