@@ -1,0 +1,41 @@
+5
+&a 헬로
+돈: %vaulteco_balance%
+이 플러
+;
+&a 헬로
+돈: %vaulteco_balance%
+플러그
+;
+&a 헬로
+돈: %vaulteco_balance%
+러그인
+;
+&a 헬로
+돈: %vaulteco_balance%
+그인은
+;
+&a 헬로
+돈: %vaulteco_balance%
+인은 태
+;
+&a 헬로
+돈: %vaulteco_balance%
+은 태스
+;
+&a 헬로
+돈: %vaulteco_balance%
+태스트
+;
+&a 헬로
+돈: %vaulteco_balance%
+스트 입
+;
+&a 헬로
+돈: %vaulteco_balance%
+트 입니
+;
+&a 헬로
+돈: %vaulteco_balance%
+입니다.
+;
