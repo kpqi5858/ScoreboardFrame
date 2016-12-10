@@ -14,6 +14,7 @@ I don't know
 
 ### 1.0
  - Based on CB 1.8.8
+
 ### 1.1
  - Added 1.5.2 Supoort (1.5.2 only jar file)
  - When join the server, scoreboard in the config will automatically executed
