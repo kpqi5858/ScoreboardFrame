@@ -1,0 +1,113 @@
+4
+&a태스트
+돈 : %vaulteco_balance%
+x : %player_x%
+y : %player_y%
+z : %player_z%
+&r플러그인
+;
+&a태스트
+돈 : %vaulteco_balance%
+x : %player_x%
+y : %player_y%
+z : %player_z%
+&b플&r러그인
+;
+&a태스트
+돈 : %vaulteco_balance%
+x : %player_x%
+y : %player_y%
+z : %player_z%
+&b플러&r그인
+;
+&a태스트
+돈 : %vaulteco_balance%
+x : %player_x%
+y : %player_y%
+z : %player_z%
+&b플러그&r인
+;
+&a태스트
+돈 : %vaulteco_balance%
+x : %player_x%
+y : %player_y%
+z : %player_z%
+&b플러그인
+;
+&a태스트
+돈 : %vaulteco_balance%
+x : %player_x%
+y : %player_y%
+z : %player_z%
+&b플러그인
+;
+&a태스트
+돈 : %vaulteco_balance%
+x : %player_x%
+y : %player_y%
+z : %player_z%
+&b플러그&r인
+;
+&a태스트
+돈 : %vaulteco_balance%
+x : %player_x%
+y : %player_y%
+z : %player_z%
+&b플러&r그인
+;
+&a태스트
+돈 : %vaulteco_balance%
+x : %player_x%
+y : %player_y%
+z : %player_z%
+&b플&r러그인
+;
+&a태스트
+돈 : %vaulteco_balance%
+x : %player_x%
+y : %player_y%
+z : %player_z%
+&r플러그인
+;
+&a태스트
+돈 : %vaulteco_balance%
+x : %player_x%
+y : %player_y%
+z : %player_z%
+&r플러그인
+;
+&a태스트
+돈 : %vaulteco_balance%
+x : %player_x%
+y : %player_y%
+z : %player_z%
+&b플러그인
+;
+&a태스트
+돈 : %vaulteco_balance%
+x : %player_x%
+y : %player_y%
+z : %player_z%
+&r플러그인
+;
+&a태스트
+돈 : %vaulteco_balance%
+x : %player_x%
+y : %player_y%
+z : %player_z%
+&b플러그인
+;
+&a태스트
+돈 : %vaulteco_balance%
+x : %player_x%
+y : %player_y%
+z : %player_z%
+&b플러그인
+;
+&a태스트
+돈 : %vaulteco_balance%
+x : %player_x%
+y : %player_y%
+z : %player_z%
+&b플러그인
+;
