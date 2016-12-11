@@ -11,7 +11,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class MainSF extends JavaPlugin {
 	
-	public static final String VER = "1.2";
+	public static final String VER = "1.3";
 	
 	public static Plugin plugin;
 	
@@ -58,12 +58,14 @@ public class MainSF extends JavaPlugin {
 				sender.sendMessage("필요 펄미션 : sf.scoreboard.<name>");
 				sender.sendMessage("/clearsf : 현제 작동중인 스코어보드를 중지합니다.");
 				sender.sendMessage("필요 펄미션 : sf.cancel");
-				sender.sendMessage("콘솔에서는 이 명령어들을 사용할 수 없습니다.");
-				return false;
+				sender.sendMessage("/reloadsf : 스코어보드를 다시 로드합니다.");
+				sender.sendMessage("필요 펄미션 : sf.cancel");
+				sender.sendMessage("콘솔에서는 /runsf, /clearsf 명령어를 사용할 수 없습니다.");
+				return true;
 			}
 			
 		});
-		
+		getCommand("reloadsf").setExecutor(new SFCmd2());
 		
 		getServer().getPluginManager().registerEvents(new Events(), this);
 		
@@ -77,18 +79,18 @@ public class MainSF extends JavaPlugin {
 			
 		} catch (IOException e) {
 			e.printStackTrace();
-			getLogger().warning("Scoreboard 파일을 로드하는 중에 오류가 발생했습니다.");
+			getLogger().warning("Scoreboard 파일을 로드하는 중에 알수 없는 오류가 발생했습니다.");
 			getLogger().warning("플러그인을 비활성화 합니다.");
 			Bukkit.getServer().getPluginManager().disablePlugin(this);
 			return;
 		}
 		getLogger().info("Scoreboard 파일을 로드하였습니다.");
-		getLogger().info("걸린 시간 : " + (System.currentTimeMillis() - ms1) + "ms.");
+		getLogger().info("걸린 시간 : " + (System.currentTimeMillis() - ms1) + "ms");
 		getLogger().info("Scoreboard 로드된 항목들");
 		for (String name : ScoreFileLoader.SCOREBOARDS.keySet()) {
 			getLogger().info(name);
 		}
-		getLogger().info(usePlaceHolder() ? "PlaceHolderAPI를 사용합니다." : "PlaceHolderAPI를 사용하지 않습니다.");
+		getLogger().info(usePlaceHolder() ? "PlaceholderAPI를 사용합니다." : "PlaceholderAPI를 사용하지 않습니다.");
 		
 		new ScoreboardThread();
 	}
@@ -97,7 +99,11 @@ public class MainSF extends JavaPlugin {
 		return usephapi;
 	}
 	
-	public static boolean is152Version() {
-		return Bukkit.getServer().getVersion().contains("1.5.2") || Bukkit.getServer().getVersion().contains("152");
+	/**
+	 * 1.5.2버전인가?
+	 * @return 1.5.2 = true, other = false
+	 */
+	public static boolean isUnsupportedVersion() {
+		return Bukkit.getServer().getVersion().contains("1.5.2") || Bukkit.getServer().getVersion().contains("152") || Bukkit.getServer().getVersion().contains("1_5_2");
 	}
 }

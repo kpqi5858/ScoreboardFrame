@@ -32,7 +32,7 @@ public class Events implements Listener {
 			ScoreboardThread.TORUN.put(sender.getUniqueId(), thread);
 			return;
 		} else {
-			sender.sendMessage("[ScoreboardFrame]" + name + "§c 이름의 스코어보드가 없습니다.");
+			sender.sendMessage("[ScoreboardFrame] " + name + "§c 이름의 스코어보드가 없습니다.");
 			return;
 		}
 	}

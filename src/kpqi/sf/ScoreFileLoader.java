@@ -24,13 +24,15 @@ public class ScoreFileLoader {
 	static File path = new File("" + p.getDataFolder().getAbsolutePath());
 	
 	public static void reload() throws IOException {
+		SCOREBOARDS.clear();
+		
 		List<File> f = new ArrayList<File>();
 		File[] list = path.listFiles();
 		if (list == null) return;
 		if (list.length == 0) return;
 		for (File t : list) {
 			if (t.isFile()) {
-				int pos = t.getName().lastIndexOf(".");
+				int pos = t.getName().lastIndexOf("."); //파일 확장자 구하기
 				if (t.getName().substring(pos + 1).equalsIgnoreCase("txt")) {
 					f.add(t);
 				}

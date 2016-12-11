@@ -32,7 +32,7 @@ public class SFCmd implements CommandExecutor {
 				ScoreboardThread.TORUN.put(((Player) sender).getUniqueId(), thread);
 				return true;
 			} else {
-				sender.sendMessage("[ScoreboardFrame]" + name + "§c 이름의 스코어보드가 없습니다.");
+				sender.sendMessage("[ScoreboardFrame] " + name + "§c 이름의 스코어보드가 없습니다.");
 				return true;
 			}
 		

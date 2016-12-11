@@ -9,7 +9,6 @@ import org.bukkit.scheduler.BukkitRunnable;
 public class ScoreboardThread extends BukkitRunnable {
 	
 	public static final Map<UUID, ScoreThread> TORUN = new HashMap<UUID, ScoreThread>();
-
 	
 	
 	public ScoreboardThread() {

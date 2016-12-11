@@ -80,7 +80,7 @@ public class ScoreThread implements Runnable {
 			Collections.reverse(convert);
 			
 			//1.5.2 Support
-			if (MainSF.is152Version()) {
+			if (MainSF.isUnsupportedVersion()) {
 				for (String to : convert) {
 					String to1 = to.replace('&', '」');
 					t.getScore(new FakePlayer(to1)).setScore(score);
