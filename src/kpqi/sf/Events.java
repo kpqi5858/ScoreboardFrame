@@ -28,7 +28,7 @@ public class Events implements Listener {
 			if (ScoreboardThread.TORUN.containsKey(sender.getUniqueId())) {
 				return;
 			}
-			ScoreThread thread = new ScoreThread(ScoreFileLoader.SCOREBOARDS.get(name), sender, 0, MainSF.usePlaceHolder());
+			ScoreThread thread = new ScoreThread(ScoreFileLoader.SCOREBOARDS.get(name), sender, MainSF.usePlaceHolder());
 			ScoreboardThread.TORUN.put(sender.getUniqueId(), thread);
 			return;
 		} else {

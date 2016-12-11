@@ -59,7 +59,7 @@ public class MainSF extends JavaPlugin {
 				sender.sendMessage("/clearsf : 현제 작동중인 스코어보드를 중지합니다.");
 				sender.sendMessage("필요 펄미션 : sf.cancel");
 				sender.sendMessage("/reloadsf : 스코어보드를 다시 로드합니다.");
-				sender.sendMessage("필요 펄미션 : sf.cancel");
+				sender.sendMessage("필요 펄미션 : sf.reload");
 				sender.sendMessage("콘솔에서는 /runsf, /clearsf 명령어를 사용할 수 없습니다.");
 				return true;
 			}

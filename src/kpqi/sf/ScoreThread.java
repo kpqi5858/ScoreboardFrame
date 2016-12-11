@@ -20,10 +20,6 @@ public class ScoreThread implements Runnable {
 
 	int maxfr;
 	
-	int totloop = 0;
-	
-	int reqloop;
-	
 	long age = 0;
 	
 	public int taskid;
@@ -32,10 +28,9 @@ public class ScoreThread implements Runnable {
 	
 	List<List<String>> rea;
 	
-	public ScoreThread(ScoreboardData data, Player pl, int loop, boolean useplaceapi) {
+	public ScoreThread(ScoreboardData data, Player pl, boolean useplaceapi) {
 		p = pl;
 		delay = data.delay;
-		reqloop = loop;
 		maxfr = data.data.size();
 		rea = data.data;
 	}
@@ -44,13 +39,7 @@ public class ScoreThread implements Runnable {
 	public void run() {
 		if (age % delay == 0) {
 			if (maxfr == current) {
-				totloop++;
 				current = 0;
-				if (totloop == reqloop) {
-					p.setScoreboard(Bukkit.getScoreboardManager().getNewScoreboard());
-					Bukkit.getScheduler().cancelTask(taskid);
-					return;
-				}
 			}
 			if (canceled) {
 				return;
@@ -72,23 +61,23 @@ public class ScoreThread implements Runnable {
 			
 			int score = 1;
 			
-			t.setDisplayName(convert.get(0).replace('&', 'ã€'));
+			t.setDisplayName(convert.get(0).replace('&', '¡×'));
 			
 			convert.remove(0);
 			
-			//ì•ˆë’¤ì§‘ìœ¼ë©´ ë’¤ì§‘ì–´ì„œë‚˜ì˜´ 			
+			//¾ÈµÚÁıÀ¸¸é µÚÁı¾î¼­³ª¿È
 			Collections.reverse(convert);
 			
 			//1.5.2 Support
 			if (MainSF.isUnsupportedVersion()) {
 				for (String to : convert) {
-					String to1 = to.replace('&', 'ã€');
+					String to1 = to.replace('&', '¡×');
 					t.getScore(new FakePlayer(to1)).setScore(score);
 					score++;
 				}
 			} else {
 				for (String to : convert) {
-					String to1 = to.replace('&', 'ã€');
+					String to1 = to.replace('&', '¡×');
 					t.getScore(to1).setScore(score);
 					score++;
 				}

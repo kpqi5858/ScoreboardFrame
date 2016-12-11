@@ -27,7 +27,7 @@ public class SFCmd implements CommandExecutor {
 				if (ScoreboardThread.TORUN.containsKey(((Player) sender).getUniqueId())) {
 					return true;
 				}
-				ScoreThread thread = new ScoreThread(ScoreFileLoader.SCOREBOARDS.get(name), ((Player) sender), -1, MainSF.usePlaceHolder());
+				ScoreThread thread = new ScoreThread(ScoreFileLoader.SCOREBOARDS.get(name), ((Player) sender), MainSF.usePlaceHolder());
 
 				ScoreboardThread.TORUN.put(((Player) sender).getUniqueId(), thread);
 				return true;
