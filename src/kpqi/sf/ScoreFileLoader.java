@@ -66,7 +66,7 @@ public class ScoreFileLoader {
 				p.getLogger().warning("" + f.getName() + " 파일에 오류가 있습니다.");
 				p.getLogger().warning("오류 : 딜레이는 음수가 될 수 없습니다.");
 				in.close();
-				throw new RuntimeException("Delay cannot be negative");
+				throw new RuntimeException("Delay cannot be negative.");
 			}
 			if (delay == 0) delay = 1; //0으로하면 오류납니다
 			
@@ -93,6 +93,13 @@ public class ScoreFileLoader {
 				continue;
 			}
 			temp.add(str);
+		}
+		
+		if (result.size() == 0) {
+			p.getLogger().warning("" + f.getName() + " 파일에 오류가 있습니다.");
+			p.getLogger().warning("오류 : 프레임을 찾을 수 없습니다.");
+			in.close();
+			throw new RuntimeException("Cannot find frame.");
 		}
 		
 		return new ScoreboardData(result, resultDelay);

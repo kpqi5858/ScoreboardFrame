@@ -11,13 +11,15 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class MainSF extends JavaPlugin {
 	
-	public static final String VER = "1.3";
+	public static final String VER = "1.4";
 	
 	public static Plugin plugin;
 	
 	private static boolean usephapi;
-	
 	public static String main;
+	
+	public static boolean usecmdph;
+	public static boolean usevtph;
 	
 	public void onEnable() {
 		plugin = this;
@@ -28,6 +30,14 @@ public class MainSF extends JavaPlugin {
 			saveConfig();
 			reloadConfig();
 		}
+		if (!getConfig().isSet("placeholder.command")) {
+			getConfig().addDefault("placeholder.command", true);
+			getConfig().addDefault("placeholder.vt", true);
+			getConfig().options().copyDefaults(true);
+			saveConfig();
+			reloadConfig();
+		}
+		
 		getConfig().options().copyDefaults(true);
 		saveConfig();
 		reloadConfig();
@@ -36,10 +46,32 @@ public class MainSF extends JavaPlugin {
 		usephapi = getConfig().getBoolean("usephapi");
 		main = getConfig().getString("main");
 		
+		usecmdph = getConfig().getBoolean("placeholder.command");
+		usevtph = getConfig().getBoolean("placeholder.vt");
+		
 		if (usephapi) {
 			if (!Bukkit.getServer().getPluginManager().isPluginEnabled("PlaceholderAPI")) {
 				getLogger().warning("PlaceholderAPI 플러그인을 찾을 수 없습니다.");
 				usephapi = false;
+			}
+		}
+		if (usevtph) {
+			if (!Bukkit.getServer().getPluginManager().isPluginEnabled("PlaceholderAPI")) {
+				getLogger().warning("PlaceholderAPI 플러그인을 찾을 수 없습니다.");
+				getLogger().warning("VariableTriggers 플러그인과 연동되기 위해서는 PlaceholderAPI 플러그인이 필요합니다.");
+				usevtph = false;
+			}
+			
+			if (!Bukkit.getServer().getPluginManager().isPluginEnabled("VariableTriggers")) {
+				getLogger().warning("VariableTriggers 플러그인을 찾을 수 없습니다.");
+				usevtph = false;
+			}
+		}
+		if (usecmdph) {
+			if (!Bukkit.getServer().getPluginManager().isPluginEnabled("PlaceholderAPI")) {
+				getLogger().warning("PlaceholderAPI 플러그인을 찾을 수 없습니다.");
+				getLogger().warning("다른 플러그인들과 연동하기 위해서는 PlaceholderAPI 플러그인이 필요합니다.");
+				usecmdph = false;
 			}
 		}
 		
@@ -54,18 +86,32 @@ public class MainSF extends JavaPlugin {
 					sender.sendMessage("...");
 				}
 				sender.sendMessage("[ScoreboardFrame] Version : " + VER + " by Kpqi5858");
-				sender.sendMessage("/runsf <name> : 이름이 name인 로드된 스코어보드를 실행합니다..");
-				sender.sendMessage("필요 펄미션 : sf.scoreboard.<name>");
-				sender.sendMessage("/clearsf : 현제 작동중인 스코어보드를 중지합니다.");
-				sender.sendMessage("필요 펄미션 : sf.cancel");
-				sender.sendMessage("/reloadsf : 스코어보드를 다시 로드합니다.");
-				sender.sendMessage("필요 펄미션 : sf.reload");
-				sender.sendMessage("콘솔에서는 /runsf, /clearsf 명령어를 사용할 수 없습니다.");
+				sender.sendMessage("[ScoreboardFrame] ");
+				sender.sendMessage("[ScoreboardFrame] /runsf <name> : 이름이 name인 로드된 스코어보드를 실행합니다.");
+				sender.sendMessage("[ScoreboardFrame] 필요 펄미션 : sf.scoreboard.<name>");
+				sender.sendMessage("[ScoreboardFrame] ");
+				sender.sendMessage("[ScoreboardFrame] /clearsf : 현제 작동중인 스코어보드를 중지합니다.");
+				sender.sendMessage("[ScoreboardFrame] 필요 펄미션 : sf.cancel");
+				sender.sendMessage("[ScoreboardFrame] ");
+				sender.sendMessage("[ScoreboardFrame] /reloadsf : 스코어보드를 다시 로드합니다.");
+				sender.sendMessage("[ScoreboardFrame] 필요 펄미션 : sf.reload");
+				sender.sendMessage("[ScoreboardFrame] ");
+				sender.sendMessage("[ScoreboardFrame] /placeholdersf <변수이름> [값] : PlaceholderAPI 사용시 %sfph_cmd_<변수이름>% 으로 [값]을 받아올수 있습니다.");
+				sender.sendMessage("[ScoreboardFrame] 값이 없으면 <변수이름> 변수의 값이 초기화 됩니다.");
+				sender.sendMessage("[ScoreboardFrame] 필요 펄미션 : 없음");
+				sender.sendMessage("[ScoreboardFrame] ");
+				sender.sendMessage("[ScoreboardFrame] 콘솔에서는 /runsf, /clearsf, /placeholdersf 명령어를 사용할 수 없습니다.");
 				return true;
 			}
 			
 		});
 		getCommand("reloadsf").setExecutor(new SFCmd2());
+		
+		if (usephapi) {
+			new SFIntegration();
+		}
+		
+		getCommand("placeholdersf").setExecutor(new SFIntegration.CmdIntegrationListener());
 		
 		getServer().getPluginManager().registerEvents(new Events(), this);
 		
@@ -79,7 +125,7 @@ public class MainSF extends JavaPlugin {
 			
 		} catch (IOException e) {
 			e.printStackTrace();
-			getLogger().warning("Scoreboard 파일을 로드하는 중에 알수 없는 오류가 발생했습니다.");
+			getLogger().warning("Scoreboard 파일을 로드하는 중에 알수 없는 입출력 오류가 발생했습니다.");
 			getLogger().warning("플러그인을 비활성화 합니다.");
 			Bukkit.getServer().getPluginManager().disablePlugin(this);
 			return;

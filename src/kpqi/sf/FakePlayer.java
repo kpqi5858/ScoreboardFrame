@@ -50,6 +50,10 @@ import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.util.Vector;
 
+/**
+ * FakePlayer for scoreboard entry
+ *
+ */
 public class FakePlayer implements Player {
 	
 	private String name;
@@ -58,6 +62,9 @@ public class FakePlayer implements Player {
 		this.name = name;
 	}
 	
+	/**
+	 * Entry name
+	 */
 	@Override
 	public String getName() {
 		// TODO Auto-generated method stub

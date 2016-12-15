@@ -3,7 +3,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
 	<classpathentry kind="lib" path="C:/Users/you/Desktop/JavaPrograming/BukkitBuilds/craftbukkit-1.8.8.jar" sourcepath="C:/Users/you/Desktop/JavaPrograming/org.zip"/>
-	<classpathentry kind="lib" path="C:/Users/you/Desktop/JavaPrograming/1.5.2Bukkit/plugins/MVdWPlaceholderAPI.jar"/>
-	<classpathentry kind="lib" path="C:/Users/you/Desktop/JavaPrograming/1.5.2Bukkit/plugins/PlaceholderAPI.jar"/>
+	<classpathentry kind="lib" path="C:/Users/you/Desktop/JavaPrograming/MCPluginDepend/PlaceholderAPI.jar"/>
+	<classpathentry kind="lib" path="C:/Users/you/Desktop/JavaPrograming/MCPluginDepend/VariableTriggers.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
