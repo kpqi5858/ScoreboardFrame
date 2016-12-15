@@ -1,0 +1,11 @@
+1
+&1제목
+커맨드: %sfph_cmd_test%
+트리거 변수 : %sfph_vt_kpqi%
+또다른 트리거 변수 : %sfph_vt_<playername>.it%
+;
+&2제목
+커맨드: %sfph_cmd_test%
+트리거 변수 : %sfph_vt_kpqi%
+또다른 트리거 변수 : %sfph_vt_<playername>.it%
+;
