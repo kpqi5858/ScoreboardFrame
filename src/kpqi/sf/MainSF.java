@@ -31,7 +31,7 @@ public class MainSF extends JavaPlugin {
 			reloadConfig();
 		}
 		if (!getConfig().isSet("placeholder.command")) {
-			getConfig().addDefault("placeholder.command", true);
+			getConfig().addDefault("placeholder.command", false);
 			getConfig().addDefault("placeholder.vt", true);
 			getConfig().options().copyDefaults(true);
 			saveConfig();
