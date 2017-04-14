@@ -70,17 +70,17 @@ public class ScoreThread implements Runnable {
 			
 			int score = 1;
 			
-			t.setDisplayName(convert.get(0).replace('&', '¡×'));
+			t.setDisplayName(convert.get(0).replace('&', 'ã€'));
 			
 			convert.remove(0);
 			
-			//¾ÈµÚÁýÀ¸¸é µÚÁý¾î¼­³ª¿È
+			//ì•ˆë’¤ì§‘ìœ¼ë©´ ê±°ê¾¸ë¡œë¨
 			Collections.reverse(convert);
 			
 			//1.5.2/or other unsupported version Support
 			if (MainSF.isUnsupportedVersion()) {
 				for (String to : convert) {
-					String to1 = to.replace('&', '¡×');
+					String to1 = to.replace('&', 'ã€');
 					//Yeah. Handle this error!
 					if (to1.getBytes().length >= 16) {
 						to1 = new String(Arrays.copyOfRange(to1.getBytes(), 0, 15));
@@ -92,7 +92,7 @@ public class ScoreThread implements Runnable {
 				}
 			} else {
 				for (String to : convert) {
-					String to1 = to.replace('&', '¡×');
+					String to1 = to.replace('&', 'ã€');
 					
 					//I found the bug that entry cannot be 40 char long
 					if (to1.length() > 40) {
